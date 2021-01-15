@@ -34,7 +34,7 @@ var server = http.createServer(function(req, res){
     //send the response
     res.end('Hello world!');
     //log the request path
-    //console.log('Trimmed path is: '+trimmedPath+' with a method: '+method+' with this query string params '+JSON.stringify(queryStringObject)+', the headers are '+JSON.stringify(headers));
+    console.log('Trimmed path is: '+trimmedPath+' with a method: '+method+' with this query string params '+JSON.stringify(queryStringObject)+', the headers are '+JSON.stringify(headers));
     console.log('Request received with this payload: ' + buffer);
   })
 

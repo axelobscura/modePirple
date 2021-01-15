@@ -59,6 +59,7 @@ var server = http.createServer(function(req, res){
     });
   });
 });
+
 //start the server, and have it listen on port 7575
 server.listen(7575, function(){
   console.log('server listening on 7575');

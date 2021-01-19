@@ -52,6 +52,7 @@ var server = http.createServer(function(req, res){
       // Covert payload to string
       var payloadString = JSON.stringify(payload);
       // Return the response
+      res.setHeader('Content-Type','application/json');
       res.writeHead(statusCode);
       res.end(payloadString);
       console.log('Trimmed path is: '+trimmedPath+' with a method: '+method+' with this query string params '+JSON.stringify(queryStringObject)+', the headers are '+JSON.stringify(headers));

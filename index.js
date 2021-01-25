@@ -96,6 +96,11 @@ handlers.ping = function(data,callback){
   callback(200)
 }
 
+//Hello Handler
+handlers.hello = function(data,callback){
+  callback(200, {'message':'Welcome to my new API...'})
+}
+
 // Not found handler
 handlers.notFound = function(data, callback){
   callback(404, {'message':'That router does not exist...'})
@@ -103,5 +108,6 @@ handlers.notFound = function(data, callback){
 
 // Define a request router
 var router = {
-  'ping': handlers.ping
+  'ping': handlers.ping,
+  'hello': handlers.hello
 };

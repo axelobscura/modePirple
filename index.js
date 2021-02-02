@@ -6,13 +6,14 @@ const url = require("url");
 const StringDecoder = require("string_decoder").StringDecoder;
 const config = require('./config');
 var fs = require("fs");
-var _data = require('./lib/data');
+var handlers = require('./lib/handlers');
+//var _data = require('./lib/data');
 
 // TESTING
 // @TODO delete this
-_data.delete('test','newFile',function(err){
-  console.log('This was the error ', err);
-});
+//_data.delete('test','newFile',function(err){
+//  console.log('This was the error ', err);
+//});
 
 // The server should respond to all requests with a string
 var httpServer = http.createServer(function(req, res){
@@ -95,26 +96,9 @@ var unifiedServer = function(req, res){
   });
 }
 
-// Define the handlers
-var handlers = {};
-
-//Ping Handler
-handlers.ping = function(data,callback){
-  callback(200)
-}
-
-//Hello Handler
-handlers.hello = function(data,callback){
-  callback(200, {'message':'Welcome to my new API...'})
-}
-
-// Not found handler
-handlers.notFound = function(data, callback){
-  callback(404, {'message':'That router does not exist...'})
-};
-
 // Define a request router
 var router = {
   'ping': handlers.ping,
-  'hello': handlers.hello
+  'hello': handlers.hello,
+  'users': handlers.users
 };
